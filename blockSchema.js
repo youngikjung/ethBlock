@@ -1,9 +1,9 @@
 "use strict";
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var Block = new Schema({
+let Block = new Schema({
     number              : {type: Number, index: {unique: true}},
     hash                : String,
     parentHash          : String,
@@ -26,7 +26,7 @@ var Block = new Schema({
     uncles              : [String]
 });
 
-var Transaction = new Schema({
+let Transaction = new Schema({
     hash                : {type: String, index: {unique: true}},
     nonce               : Number,
     blockHash           : String,

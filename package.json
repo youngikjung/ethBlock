@@ -16,7 +16,9 @@
     "url": "https://github.com/youngikjung/ethBlock/issues"
   },
   "dependencies": {
+    "bignumber": "^1.1.0",
     "bignumber.js": "^9.0.0",
+    "date-utils": "^1.2.21",
     "ejs": "^2.7.2",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
@@ -26,7 +28,9 @@
     "uuid": "^3.3.3",
     "version": "^0.1.2",
     "web3": "~0.19.0",
-    "web3-providers-ws": "^1.2.4"
+    "web3-providers-ws": "^1.2.4",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.1"
   },
   "homepage": "https://github.com/youngikjung/ethBlock#readme"
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 // [LOAD PACKAGES]
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // [DB SETTING]
 mongoose.set('useNewUrlParser', true);
@@ -9,8 +9,8 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 // CONNECT TO MONGODB SERVER
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/test123456', { useUnifiedTopology: true });
-var db = mongoose.connection;
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/ethDB', { useUnifiedTopology: true });
+const db = mongoose.connection;
 
 db.once("open", function(){
   console.log("DB connected");
