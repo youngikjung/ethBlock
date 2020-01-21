@@ -18,7 +18,7 @@ npm install
 ## Running Server
 
 ```bash
-node ethServer.js
+forever start -l /data/ether_core server --minUptime 5000 --spinSleepTime 2000 ethServer.js
 ```
 
 ## Explanation
