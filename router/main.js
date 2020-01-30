@@ -4,7 +4,7 @@ require('../blockSchema');
 
 const Web3                = require('web3');
 const web3                = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
-const utils               = require('../util')
+const utils               = require('../utils/util')
 const mongoose            = require('mongoose');
 const bigNumber           = require('bignumber.js');
 const blockSchema         = mongoose.model('Block');

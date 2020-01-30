@@ -1,7 +1,7 @@
 'use strict';
-var BigNumber = require('bignumber.js');
+const BigNumber = require('bignumber.js');
 
-var etherUnits = function() {}
+let etherUnits = () => {}
 etherUnits.unitMap = {
     'wei'           : '1',
     'kwei'          : '1000',
@@ -29,32 +29,32 @@ etherUnits.unitMap = {
     'tether'        : '1000000000000000000000000000000'
 };
 
-etherUnits.getValueOfUnit = function(unit) {
+etherUnits.getValueOfUnit = (unit) => {
     unit = unit ? unit.toLowerCase() : 'ether';
-    var unitValue = this.unitMap[unit];
+    let unitValue = this.unitMap[unit];
     if (unitValue === undefined) {
         throw new Error(globalFuncs.errorMsgs[4] + JSON.stringify(this.unitMap, null, 2));
     }
     return new BigNumber(unitValue, 10);
 }
 
-etherUnits.fiatToWei = function(number, pricePerEther) {
-    var returnValue = new BigNumber(String(number)).div(pricePerEther).times(this.getValueOfUnit('ether')).round(0);
+etherUnits.fiatToWei = (number, pricePerEther) => {
+    let returnValue = new BigNumber(String(number)).div(pricePerEther).times(this.getValueOfUnit('ether')).round(0);
     return returnValue.toString(10);
 }
 
-etherUnits.toFiat = function(number, unit, multi) {
-        var returnValue = new BigNumber(this.toEther(number, unit)).times(multi).round(5);
+etherUnits.toFiat = (number, unit, multi) => {
+        let returnValue = new BigNumber(this.toEther(number, unit)).times(multi).round(5);
         return returnValue.toString(10);
 }
 
-etherUnits.toEther = function(number, unit) {
-        var returnValue = new BigNumber(this.toWei(number, unit)).div(this.getValueOfUnit('ether'));
+etherUnits.toEther = (number, unit) => {
+        let returnValue = new BigNumber(this.toWei(number, unit)).div(this.getValueOfUnit('ether'));
         return returnValue.toString(10);
 }
 
-etherUnits.toWei = function(number, unit) {
-        var returnValue = new BigNumber(String(number)).times(this.getValueOfUnit(unit));
+etherUnits.toWei = (number, unit) => {
+        let returnValue = new BigNumber(String(number)).times(this.getValueOfUnit(unit));
         return returnValue.toString(10);
 }
 
