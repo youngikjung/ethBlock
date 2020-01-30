@@ -18,6 +18,7 @@
   "dependencies": {
     "bignumber": "^1.1.0",
     "bignumber.js": "^9.0.0",
+    "body-parser": "^1.19.0",
     "date-utils": "^1.2.21",
     "ejs": "^2.7.2",
     "express": "^4.17.1",
